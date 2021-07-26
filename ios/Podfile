@@ -12,6 +12,7 @@ target 'FrintIot' do
     :hermes_enabled => false
   )
 
+
   target 'FrintIotTests' do
     inherit! :complete
     # Pods for testing
@@ -27,3 +28,4 @@ target 'FrintIot' do
     react_native_post_install(installer)
   end
 end
+pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'

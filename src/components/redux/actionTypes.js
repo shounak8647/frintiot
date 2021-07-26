@@ -1,0 +1,12 @@
+export const ROOM_ADDED = 'roomAdded';
+export const ROOM_DELETED = 'roomDeleted';
+export const ROOM_EDITED = 'roomEdited';
+export const DEVICE_ADDED = 'deviceAdded';
+export const DEVICE_DELETED = 'deviceDeleted';
+export const DEVICE_EDITED = 'deviceEdited';
+export const PROJECT_ADDED = 'projectAdded';
+export const PROJECT_DELETED = 'projectDeleted';
+export const PROJECT_EDITED = 'projectEdited';
+export const SET_ROOM = 'setRoom';
+export const SET_DEVICE = 'setDevice';
+export const SET_PROJECT = 'setProject';

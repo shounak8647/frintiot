@@ -1,24 +1,31 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import {SvgUri} from 'react-native-svg';
 import {useState} from 'react/cjs/react.development';
 import {appUrl, cookie} from '../config';
 import {BlurView} from '@react-native-community/blur';
 
-export default function RoomDetail(props) {
+export default function SandboxDetail(props) {
   const [icon, setIcon] = useState(null);
   useEffect(() => {
     setIcon(props.icon);
   }, [props.icon]);
 
+  console.log(props.icon);
   return (
     <View style={styles.room}>
+      <BlurView
+        style={styles.absolute}
+        blurType="dark"
+        blurAmount={10}
+        reducedTransparencyFallbackColor="white"
+      />
       <Image
         style={styles.icon}
         source={{uri: props.icon}}
         resizeMode={'contain'}
       />
-      <Text style={styles.text}>{props.displayName}</Text>
+      <Text style={styles.text}>{props.room.displayName}</Text>
     </View>
   );
 }
@@ -28,12 +35,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     borderRadius: 12,
-    width: 170,
-    height: 170,
+    width: 50,
+    height: 50,
     justifyContent: 'center',
     borderColor: 'silver',
     borderWidth: 0,
-    backgroundColor: '#1f1f1faa',
+    borderRadius: 20,
   },
   absolute: {
     position: 'absolute',
@@ -52,8 +59,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   icon: {
-    width: 80,
-    height: 80,
+    width: 50,
+    height: 50,
     alignSelf: 'center',
     marginTop: 10,
   },
